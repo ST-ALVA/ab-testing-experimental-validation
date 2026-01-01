@@ -1,0 +1,19 @@
+# =========================
+# Python / Virtual Envs
+# =========================
+AB_Test_Experimental/
+.env/
+__pycache__/
+*.py[cod]
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+.vscode/
+.idea/
