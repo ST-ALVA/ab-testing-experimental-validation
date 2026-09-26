@@ -10866,12 +10866,11 @@ P-value:     0.0088
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conclusions-%E2%80%94-A/B-Test-Results">Conclusions — A/B Test Results<a class="anchor-link" href="#Conclusions-%E2%80%94-A/B-Test-Results">¶</a></h2><p>A one-sided Z-test was first applied to evaluate whether <strong>Group B outperformed Group A</strong> in terms of conversion rate (<code>alternative='larger'</code>).<br/>
+<h2 id="Conclusions-%E2%80%94-A/B-Test-Results">Conclusions — A/B Test Results<a class="anchor-link" href="#Conclusions-%E2%80%94-A/B-Test-Results">¶</a></h2><p>The planned hypothesis was that the new recommendation system <strong>improves</strong> conversion, so a one-sided Z-test was first applied to evaluate whether <strong>Group B outperformed Group A</strong> (<code>alternative='larger'</code>).<br/>
 The result showed <strong>no statistical evidence to reject the null hypothesis</strong>, with a p-value of <strong>0.9912</strong>, indicating that <strong>Group B cannot be considered superior to Group A</strong>.</p>
-<p>Given that <strong>Group B exhibited a lower observed conversion rate</strong>, additional tests were conducted to formally assess this difference:</p>
+<p>Because Group B showed a <em>lower</em> observed conversion rate, the difference was then assessed with a <strong>two-sided Z-test</strong> (<code>alternative='two-sided'</code>), which makes no assumption about direction. It confirmed a <strong>statistically significant difference</strong> between the groups, with a p-value of <strong>0.0175</strong>. This two-sided result is the primary evidence for the conclusion.</p>
 <ul>
-<li>A <strong>one-sided Z-test</strong> testing whether <strong>Group B converts less than Group A</strong> (<code>alternative='smaller'</code>) produced a p-value of <strong>0.0088</strong>, allowing rejection of the null hypothesis and indicating that <strong>Group B converts significantly worse than Group A</strong>.</li>
-<li>A <strong>two-sided Z-test</strong> (<code>alternative='two-sided'</code>) also confirmed a <strong>statistically significant difference</strong> between the groups, with a p-value of <strong>0.0175</strong>.</li>
+<li><em>Note:</em> a one-sided test for B &lt; A (<code>alternative='smaller'</code>) gives p = 0.0088, but since its direction was chosen after observing the data, it is reported only for reference; the two-sided test is the appropriate one here.</li>
 </ul>
 <p>The observed <strong>lift for Group B is −13.10% relative to Group A</strong>, indicating a substantial decrease rather than the expected improvement.<br/>
 This result is further supported by the <strong>95% confidence interval for the difference in proportions (B − A)</strong>, computed using the <strong>score method</strong>: <strong>(−0.0744, −0.0074)</strong>.<br/>
@@ -10879,6 +10878,7 @@ Since this interval <strong>does not include zero</strong>, it reinforces the st
 <p>Additionally, <strong>Group A shows a higher number of events per user</strong>, suggesting stronger engagement and interaction levels. This behavioral pattern aligns with the higher conversion rate observed for Group A.</p>
 <p>Overall, instead of achieving the expected <strong>10% uplift in conversion</strong>, <strong>Group B underperforms</strong>, with a conversion rate approximately <strong>13% lower</strong> than Group A.<br/>
 These results indicate that the new recommendation system <strong>does not improve conversion performance</strong> and may be <strong>negatively affecting user behavior under the observed conditions</strong>.</p>
+<p>These conclusions should be read together with the experiment's limitations: the groups are strongly imbalanced (<strong>2,747 vs 928 users</strong>, roughly 3:1 instead of the expected 50/50), which points to a problem in user assignment, and the test ran during the pre-holiday period. Both factors limit how confidently the difference can be attributed to the recommendation system itself.</p>
 </div>
 </div>
 </div>

@@ -6,7 +6,7 @@ This case study evaluates an A/B test designed to measure the impact of a new re
 
 Contrary to expectations, the treatment group performed **significantly worse** than the control, showing an approximate **13% decrease in conversion**. Statistical testing confirmed this difference as significant.
 
-Further analysis revealed important limitations in experimental design, including uneven group sizes and strong seasonal effects, which reduce confidence in causal interpretation.
+Further analysis revealed important limitations in experimental design, including a strong group-size imbalance (2,747 vs 928 users, roughly 3:1 instead of 50/50) and seasonal effects from the holiday period, which reduce confidence in causal interpretation.
 
 Based on these findings, the most responsible data-driven decision was **not to deploy** the new recommendation system—highlighting the importance of experimental validity over forcing positive outcomes.
 
@@ -43,8 +43,10 @@ The analysis prioritizes **experimental validity and statistical rigor**, demons
 ## 📊 Key Results
 
 - The treatment group (**Group B**) showed **lower conversion** than control.
-- **Observed lift:** −13.1%
-- Statistical tests confirmed the difference is **significant**.
+- **Conversion:** Group A 31.7% vs Group B 27.6%, an **observed lift of −13.1%**
+- A two-sided Z-test confirmed the difference is **significant** (p ≈ 0.018; 95% CI for B − A: −7.4 to −0.7 percentage points).
+- The planned one-sided test for improvement (B > A) found no evidence that B performs better (p ≈ 0.99).
+- The group-size imbalance (≈3:1) suggests an assignment problem, which limits how far the result can be read as causal.
 - Control users exhibited **higher engagement**, consistent with conversion outcomes.
 - Seasonal effects and experimental limitations reduce result reliability.
 
@@ -69,7 +71,7 @@ This project includes **interactive Plotly visualizations** that enable deeper e
 ⚠️ **GitHub does not render Plotly interactivity** inside notebooks or HTML previews.  
 For full interactivity (hover, zoom, tooltips, and dynamic filtering), the HTML file must be opened locally.
 
-The visualization compliments the analytical narrative by providing an interactive view of funnel dynamics and conversion differences that support the A/B test conclusions.
+The visualization complements the analytical narrative by providing an interactive view of funnel dynamics and conversion differences that support the A/B test conclusions.
 
 ---
 
